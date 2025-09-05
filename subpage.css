@@ -1,0 +1,76 @@
+body, html {
+  margin: 0; padding: 0; height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: #111;
+  color: #eee;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#background-animation {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(135deg, #004466, #00ccff);
+  animation: gradientShift 20s ease infinite;
+  background-size: 400% 400%;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 0 18px #00ccff80;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00ccff;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #00ccff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+main {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Fade in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation-fill-mode: forwards;
+  animation-name: fadeInUp;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  animation-delay: var(--delay);
+}
+
+.fade-in:nth-child(1) { --delay: 0.2s; }
+.fade-in:nth-child(2) { --delay: 0.5s; }
+.fade-in:nth-child(3) { --delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body, html {
+  margin: 0; padding: 0; height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: #111;
+  overflow-x: hidden;
+  color: #eee;
+  position: relative;
+}
+
+/* Background animation container */
+#background-animation {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(45deg, #0066ff, #00ffdd);
+  animation: gradientShift 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #aad4ec;
+  letter-spacing: 0.06em;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00f0ff40;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px #00f0ffaa;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #00ccff;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: #00ccff;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0099cc;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}

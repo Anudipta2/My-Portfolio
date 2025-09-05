@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Details | Anudipta Mandal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Details page stylesheet -->
+  <link rel="stylesheet" href="details.css" />
+</head>
+<body data-theme="amethyst">
+  <!-- Background Overlay with glitch/giblish effect -->
+  <div class="background-art"></div>
+
+  <!-- Glassmorphic container -->
+  <main class="details-container">
+    <article class="details-card">
+      <div class="card__corners"></div>
+      <h1 class="heading-title">
+        <span class="char">D</span><span class="char">e</span><span class="char">t</span><span class="char">a</span><span class="char">i</span><span class="char">l</span><span class="char">s</span>
+      </h1>
+      <p class="bio">
+        I am Anudipta Mandal, a detail-oriented and innovative professional with a diverse background in data management, analytics, content development, and creative problem-solving. With hands-on experience as an ML Data Associate at Amazon, I have developed expertise in handling large-scale datasets, ensuring quality, accuracy, and compliance, while maintaining speed and efficiency under strict deadlines. My role has honed my ability to identify patterns, escalate critical cases, and collaborate seamlessly across teams—skills that directly align with positions such as Data Associate, Team Lead, Data Analyst, and Business Analyst.
+      </p>
+      <p class="bio">
+        Beyond data, I bring a strong foundation in content writing, editorial work, and digital creativity. Having worked as a freelance tutor, editor, and video manager, I have cultivated a talent for transforming complex information into clear, accessible communication for different audiences. My proficiency in content creation, copy editing, fact-checking, and user-friendly guidance equips me to excel as a Content Writer, especially in contexts where storytelling and technical accuracy intersect.
+      </p>
+      <p class="bio">
+        I am equally passionate about the evolving landscape of User Experience (UX) design, particularly the integration of AI-driven solutions to enhance usability and engagement. My technical skills in Excel, SharePoint, Google Workspace, HTML, and digital content tools like Canva and Adobe Premiere Pro, combined with my creative perspective, provide me with the versatility to approach UX design with both analytical rigor and creative innovation.
+      </p>
+      <p class="bio">
+        My academic journey—ranging from a Bachelor’s and ongoing Master’s in English Literature to certifications in Google Data Analytics, Cybersecurity, and IT Applications—reflects my commitment to bridging the gap between data-driven decision-making and human-centered design. I am constantly evolving, upskilling, and seeking opportunities to apply my diverse toolkit in environments that value adaptability, collaboration, and forward-thinking strategies.
+      </p>
+      <p class="bio">
+        As I advance in my career, I aspire to grow into roles where I can contribute not only as a data professional and analyst, but also as a team leader, strategist, and creative innovator—someone who can blend data insights, business intelligence, content strategy, and AI-powered UX design to drive meaningful outcomes.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Anudipta Mandal</p>
+  </footer>
+
+  <script>
+    // Animate heading letters sequentially
+    document.querySelectorAll('.heading-title .char').forEach((char, i) => {
+      char.style.animationDelay = `${i * 0.06}s`;
+    });
+  </script>
+</body>
+</html>

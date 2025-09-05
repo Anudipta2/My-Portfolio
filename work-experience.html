@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work Experience - Anudipta Mandal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ===== HEX BACKGROUND IMAGE ===== */
+    body, html {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #18132b;
+      position: relative;
+      overflow-x: hidden;
+    }
+    #background-animation {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      width: 100vw; height: 100vh;
+      background: url('LUCES-GAMER.jpg') center center/cover no-repeat;
+    }
+    /* ===== Glitch Overlay ===== */
+    #background-animation::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.22;
+      background:
+        linear-gradient(50deg, #390b5c88 10%, #18132b22 90%),
+        repeating-conic-gradient(#ff00f099 0deg 9deg, transparent 9deg 18deg);
+      filter: blur(18px) hue-rotate(35deg);
+      animation: bgHue 16s linear infinite alternate;
+    }
+    @keyframes bgHue {
+      0% { filter: blur(18px) hue-rotate(0deg); }
+      100% { filter: blur(18px) hue-rotate(350deg); }
+    }
+    /* ===== Glass Tab Container ===== */
+    .container {
+      max-width: 830px;
+      margin: 80px auto 0 auto;
+      background: rgba(28, 19, 46, 0.52);
+      border-radius: 34px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      transition: box-shadow 0.4s;
+      box-shadow: 0 8px 56px #8a2cf844, 0 1px 18px #e2cdf553;
+      padding: 33px 38px 28px 38px;
+      border: 2.5px solid rgba(191,82,255,0.4);
+      will-change: transform;
+    }
+    .container::before, .container::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      top: -13px; left: -13px; right: -13px; bottom: -13px;
+      border-radius: 42px;
+      border: 3px solid transparent;
+      z-index: 1;
+      background: linear-gradient(90deg, #f052ff 0%, #72a3c4 38%, #b152ff 58%, #4e2664 77%, #18132b 100%);
+      opacity: 0.54;
+      animation: neonBorder 9s linear infinite;
+      mix-blend-mode: screen;
+    }
+    .container::after {
+      animation-delay: 4s;
+      filter: blur(15px);
+      opacity: 0.35;
+    }
+    @keyframes neonBorder {
+      0% {background-position: 0%;}
+      100% {background-position: 200%;}
+    }
+    /* ===== Header/Back Button ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      color: #f5f0ff;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: .09em;
+      text-shadow: 0 0 8px #b152ff86;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-left: 12px;
+      padding: 9px 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 9px;
+      background: linear-gradient(90deg, #b152ff 0%, #469aff 100%);
+      color: #fff;
+      box-shadow: 0 2px 14px rgba(191,82,255,.14);
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      user-select: none;
+      border: none;
+    }
+    .btn-back:hover {
+      background: linear-gradient(90deg, #bb41e7 18%, #82a5ff 82%);
+      transform: scale(1.1);
+    }
+    /* ===== Job Entries ===== */
+    main {
+      margin-bottom: 22px;
+    }
+    article {
+      background: rgba(44, 34, 66, 0.19);
+      border-radius: 18px;
+      margin-bottom: 18px;
+      padding: 23px 18px 14px 18px;
+      box-shadow: 0 2px 38px #a545f926, 0 1px 18px #36317c33;
+      opacity: 0;
+      transform: translateY(20px) scale(0.97);
+      animation: fadeInArticle 1s cubic-bezier(.22,1,.36,1) backwards;
+    }
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      animation-delay: var(--delay, 0s);
+    }
+    @keyframes fadeInArticle {
+      from { opacity:0; transform: translateY(22px) scale(0.96);}
+      to { opacity:1; transform: translateY(0) scale(1);}
+    }
+    h2 {
+      color: #dff;
+      font-size: 1.22rem;
+      margin-top: 0;
+      text-shadow: 0 1px 8px #b152ff55;
+    }
+    em {
+      color: #98adff;
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 9px;
+      display: inline-block;
+    }
+    ul {
+      margin: 11px 0 0 17px;
+      padding: 0;
+    }
+    li {
+      color: #dcccfa;
+      font-size: 1.03rem;
+      margin-bottom: 6px;
+      font-weight: 400;
+      letter-spacing: .01em;
+      text-shadow: 0 1px 8px #6f08c633;
+    }
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 17px 0;
+      color: #ab93d7;
+      font-size: .97rem;
+      margin-top: 16px;
+    }
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .container {padding: 20px 10px;}
+    }
+    @media (max-width: 600px) {
+      h1 {font-size: 1.18rem;}
+      .container {padding: 8px 2vw;}
+      article {padding:14px 5px 8px 5px;margin-bottom:13px;}
+      h2 {font-size:1.06rem;}
+      .btn-back {padding:7px 15px; font-size:0.95rem;}
+    }
+    @media (max-width: 400px){
+      h1 {font-size: 1.08rem;}
+      .container {border-radius: 11px;}
+      article {border-radius:10px;}
+    }
+  </style>
+</head>
+<body>
+  <div id="background-animation"></div>
+  <div class="container" id="glassTab">
+    <header>
+      <h1>Work Experience</h1>
+      <a href="index.html" class="btn-back">← Back to Home</a>
+    </header>
+    <main>
+      <article class="fade-in" style="--delay: 0.2s;">
+        <h2>Amazon, Ring — ML Data Associate I</h2>
+        <p><em>November 2024 – Present</em></p>
+        <ul>
+          <li>Logged, tracked, and documented high-volume video data cases with clear problem statements and standardized resolution notes.</li>
+          <li>Maintained quality and timely delivery under tight deadlines.</li>
+          <li>Used Excel and SharePoint for data management and workflow optimization.</li>
+        </ul>
+      </article>
+      <article class="fade-in" style="--delay: 0.6s;">
+        <h2>Course Hero — Tutor (Freelance, Remote)</h2>
+        <p><em>September 2024 – November 2024</em></p>
+        <ul>
+          <li>Handled student queries through messages and sessions, providing step-by-step guidance.</li>
+          <li>Documented question categories and solutions, ensuring clarity in communication.</li>
+        </ul>
+      </article>
+      <article class="fade-in" style="--delay: 1.0s;">
+        <h2>Dugout Discussion — Video Editor & Manager (Freelance)</h2>
+        <p><em>July 2023 – November 2024</em></p>
+        <ul>
+          <li>Managed client deadlines, revisions, and documentation.</li>
+          <li>Performed fact-checking and quality assurance of digital content.</li>
+        </ul>
+      </article>
+    </main>
+    <footer>
+      <p>© 2025 Anudipta Mandal</p>
+    </footer>
+  </div>
+  <script>
+    // Glass tab mouse motion tilt
+    const glassTab = document.getElementById('glassTab');
+    glassTab.addEventListener('mousemove', function(e) {
+      const rect = glassTab.getBoundingClientRect();
+      const mx = (e.clientX - rect.left) / rect.width - 0.5;
+      const my = (e.clientY - rect.top) / rect.height - 0.5;
+      this.style.transform = `rotateX(${-my*9}deg) rotateY(${mx*11}deg) scale(1.017)`;
+    });
+    glassTab.addEventListener('mouseleave', function(){
+      this.style.transform = 'none';
+    });
+    // Smart fade-in for articles
+    document.querySelectorAll('article').forEach(function(a, i){
+      setTimeout(() => a.classList.add('fade-in'), i*220 + 220);
+    });
+  </script>
+</body>
+</html>

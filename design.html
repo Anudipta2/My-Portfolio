@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Anudipta Mandal | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="design.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body data-theme="amethyst">
+  <div class="webgl-container"></div>
+  <header>
+    <h1 class="heading-title"><span class="char">A</span><span class="char">n</span><span class="char">u</span><span class="char">d</span><span class="char">i</span><span class="char">p</span><span class="char">t</span><span class="char">a</span> 
+    <span class="char">M</span><span class="char">a</span><span class="char">n</span><span class="char">d</span><span class="char">a</span><span class="char">l</span></h1>
+    <p class="subtitle">Innovative Data Analyst &amp; Content Creator</p>
+  </header>
+  <main>
+    <div class="card card--border">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Project Highlights</h2>
+        <p>Advanced glass card, animated layout, and modular structure as inspired by DEPT & OpenAI's design approach.</p>
+      </div>
+    </div>
+    <div class="card card--border" data-theme="sapphire">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Scroll Animation</h2>
+        <p>Each card enters with a smooth fade/slide. Hover and move mouse for border accent.</p>
+      </div>
+    </div>
+    <div class="card card--border" data-theme="ruby">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Immersive UI</h2>
+        <p>Responsiveness, modularity, and a stunning animated heading.</p>
+      </div>
+    </div>
+  </main>
+  <!-- === Contact Button at Bottom === -->
+  <div class="contact-bottom">
+    <button class="btn-primary" id="contactBtn">Contact Me</button>
+  </div>
+  <footer>
+    <p>© 2025 Anudipta Mandal</p>
+  </footer>
+
+  <!-- ----- Modal Contact Form ------ -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" name="from_name" placeholder="Your Name" required>
+        <input type="email" name="from_email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="What's on your mind?" required></textarea>
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+      <div id="mailStatus"></div>
+    </div>
+  </div>
+
+  <script src="design-anim.js"></script>
+</body>
+</html>

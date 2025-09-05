@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Welcome | Anudipta Mandal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <style>
+    #bg-canvas { position: fixed; left:0; top:0; width:100vw; height:100vh; z-index:-2; background:#18132b;}
+  </style>
+</head>
+<body data-theme="amethyst">
+  <!-- Animated Background -->
+  <canvas id="bg-canvas"></canvas>
+  <header>
+    <h1 class="heading-title">
+      <span class="char">A</span><span class="char">n</span><span class="char">u</span><span class="char">d</span><span class="char">i</span><span class="char">p</span><span class="char">t</span><span class="char">a</span>
+      <span class="char">M</span><span class="char">a</span><span class="char">n</span><span class="char">d</span><span class="char">a</span><span class="char">l</span>
+    </h1>
+    <p class="subtitle">Innovative Data Analyst | Portfolio</p>
+  </header>
+  <main class="main-sections">
+    <!-- 1. Details -->
+    <section class="card card--border" id="section-details">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Details</h2>
+        <p>
+          Innovative Data Analyst skilled in interpreting complex datasets and delivering actionable business insights. Strong communicator and collaborator, adept at problem-solving across diverse teams and platforms.
+        </p>
+        <a class="btn-primary" href="details.html">Learn More</a>
+      </div>
+    </section>
+    <!-- 2. Qualifications -->
+    <section class="card card--border" id="section-qualifications" data-theme="sapphire">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Qualifications</h2>
+        <p>
+          BA in English Literature, Diploma in IT Application, progressing toward MA. Deep expertise in technical and communication skills.
+        </p>
+        <a class="btn-primary" href="qualifications.html">Learn More</a>
+      </div>
+    </section>
+    <!-- 3. Work Experience -->
+    <section class="card card--border" id="section-experience" data-theme="ruby">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Work Experience</h2>
+        <p>
+          Amazon ML Data Associate, Tutor at Course Hero, Dugout Discussion Video Manager—demonstrated excellence in project management and analytics.
+        </p>
+        <a class="btn-primary" href="work-experience.html">Learn More</a>
+      </div>
+    </section>
+    <!-- 4. Certification -->
+    <section class="card card--border" id="section-certification" data-theme="emerald">
+      <div class="card__corners"></div>
+      <div class="card__content">
+        <h2>Certification</h2>
+        <p>
+          Amazon Security Awareness, Google Data Analytics, Cisco Cyber Security, NCC 'C'. Recognized for continued professional growth.
+        </p>
+        <a class="btn-primary" href="certifications.html">Learn More</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Anudipta Mandal &bull; <a href="mailto:anudiptamandal.india@gmail.com">Contact</a></p>
+  </footer>
+
+  <!-- Animated header chars and canvas background -->
+  <script>
+    // Animate header letters
+    document.querySelectorAll('.heading-title .char').forEach((char, i) => {
+      char.style.animationDelay = `${i * 0.06}s`;
+    });
+    // Canvas background animation (DEPT-style polygonal)
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.onresize = resizeCanvas; resizeCanvas();
+    let t = 0;
+    function drawBg() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i=0; i<12; i++) {
+        let px = Math.sin(t/50+i*0.7)*200 + canvas.width/2 + Math.cos(t/70+i*1.15)*350;
+        let py = Math.cos(t/60+i*0.8)*135 + canvas.height/2 + Math.sin(t/90+i*1.25)*260;
+        ctx.beginPath();
+        ctx.arc(px, py, 95 + Math.sin(t/50 + i)*14, 0, 2*Math.PI);
+        ctx.fillStyle = `rgba(${160+10*i},${35+i*8},${230-i*7},${0.15+0.05*Math.abs(Math.sin(t/30+i))})`;
+        ctx.fill();
+      }
+      t++; requestAnimationFrame(drawBg);
+    }
+    drawBg();
+  </script>
+  <style>
+    .main-sections { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px; margin-bottom: 22px; }
+    .btn-primary {
+      margin-top: 18px;
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border-radius: 7px;
+      background: linear-gradient(90deg,#b152ff 0%,#f052ff 100%);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 1px 8px #b152ff22;
+      transition: background .23s;
+    }
+    .btn-primary:hover{ background: linear-gradient(90deg,#a040e5 15%,#f182ff 98%);}
+    .card__content p { font-size:1.07rem; color:#e3e3f1; margin-bottom:7px;}
+    @media (max-width: 800px) {
+      .main-sections { flex-direction: column; align-items: center;}
+    }
+    footer { text-align: center; color:#ababba; padding:20px 0;}
+    footer a { color: #b152ff; text-decoration: underline;}
+  </style>
+</body>
+</html>

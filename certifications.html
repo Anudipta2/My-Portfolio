@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certifications | Anudipta Mandal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="certifications.css" />
+</head>
+<body data-theme="amethyst">
+  <!-- Hex tile background image -->
+  <div class="hex-bg"></div>
+  <!-- Glitch/giblish overlay -->
+  <div class="background-art"></div>
+
+  <main class="details-container">
+    <article class="details-card rgb-glow-border" id="animatedCard">
+      <h1 class="heading-title">
+        <span class="char">C</span><span class="char">e</span><span class="char">r</span><span class="char">t</span><span class="char">i</span><span class="char">f</span><span class="char">i</span><span class="char">c</span><span class="char">a</span><span class="char">t</span><span class="char">i</span><span class="char">o</span><span class="char">n</span><span class="char">s</span>
+      </h1>
+      <section class="bio">
+        <p><strong>Amazon Security Awareness (ASA):</strong> 2023, 2024, 2025</p>
+        <p><strong>Introduction to Cyber Security — CISCO</strong></p>
+        <p><strong>Google Data Analytics:</strong> Foundations; Ask Questions to Make Data-Driven Decisions; Prepare Data for Exploration</p>
+        <p><strong>NCC ‘C’ Certificate (Grade “A”)</strong></p>
+      </section>
+      <section class="cert-images">
+        <img src="imagescisco_cyber_security_cert.png" alt="Cisco Cyber Security Certification">
+        <img src="imagesgoogle_data_analytics_cert.png" alt="Google Data Analytics Certification">
+        <img src="imagesgoogle_data_analytics_cert.jpg" alt="Cisco Cyber Security Certification">
+        <img src="imagesgoogle_data_analytics_cert_1.jpg" alt="Cisco Cyber Security Certification">
+      </section>
+      <a href="index.html" class="btn-primary return-home">Return to Home</a>
+    </article>
+  </main>
+
+  <!-- Glass modal for full image preview -->
+  <div class="glass-modal" id="glassModal">
+    <div class="glass-modal-content" id="modalContent">
+      <img src="" alt="Certificate" id="modalImg">
+      <button class="close-modal" id="closeModal">&times;</button>
+    </div>
+  </div>
+
+  <footer><p>© 2025 Anudipta Mandal</p></footer>
+
+  <script>
+    // Animate heading chars
+    document.querySelectorAll('.heading-title .char').forEach((char, i) => {
+      char.style.animationDelay = `${i * 0.05}s`;
+    });
+
+    // Neon glow flicker + box shadow animation
+    function animateCardGlow() {
+      const card = document.getElementById('animatedCard');
+      let t = 0;
+      function loop() {
+        const flicker = 0.34 + Math.abs(Math.sin(t/5)) * 0.56;
+        const boxShadow = `
+          0 0 ${16 + Math.abs(Math.sin(t/10))*34}px rgba(191,82,255,${flicker}),
+          0 0 ${28 + Math.abs(Math.sin(t/14))*40}px rgba(240,82,255,${flicker/1.2}),
+          0 0 ${38 + Math.abs(Math.cos(t/19))*34}px #6f08c666
+        `;
+        card.style.boxShadow = boxShadow;
+        t++;
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+    animateCardGlow();
+
+    // Interactive tilt and scale
+    document.getElementById('animatedCard').addEventListener('mousemove', function(e) {
+      const x = (e.clientX / window.innerWidth) - 0.5;
+      const y = (e.clientY / window.innerHeight) - 0.5;
+      this.style.transform = `rotateX(${y*8}deg) rotateY(${x*10}deg) scale(1.03)`;
+    });
+    document.getElementById('animatedCard').addEventListener('mouseleave', function() {
+      this.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+    });
+
+    // Image modal logic
+    const modal = document.getElementById('glassModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.getElementById('closeModal');
+    document.querySelectorAll('.cert-images img').forEach(img => {
+      img.addEventListener('click', function() {
+        modalImg.src = this.src;
+        modal.classList.add('show');
+        modalImg.style.transform = "scale(0.92)";
+        setTimeout(() => { modalImg.style.transform = "scale(1)"; },70);
+      });
+    });
+    closeModal.addEventListener('click', () => { modal.classList.remove('show'); });
+    modal.addEventListener('click', e => {
+      if(e.target === modal) modal.classList.remove('show');
+    });
+
+    // Motion tracking for modal image
+    const modalContent = document.getElementById('modalContent');
+    modalContent.addEventListener('mousemove', function(e){
+      const rect = modalContent.getBoundingClientRect();
+      const mx = (e.clientX - rect.left) / rect.width - 0.5;
+      const my = (e.clientY - rect.top) / rect.height - 0.5;
+      modalImg.style.transform = `scale(1.07) rotateX(${-my*9}deg) rotateY(${mx*11}deg)`;
+    });
+    modalContent.addEventListener('mouseleave', function(){
+      modalImg.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>
